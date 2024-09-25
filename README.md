@@ -33,4 +33,4 @@ If you find this tool useful, consider following [techno-rabit](https://github.c
 
 ## Find Me on :
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-VishnuPrasad-blue?style=for-the-badge&logo=LinkedIn)](https://www.linkedin.com/in/technorabit)
-[![Instagram](https://img.shields.io/badge/IG-%40__.v.shnu-red?style=for-the-badge&logo=instagram)](https://www.instagram.com/_.v.shnu)
+[![Instagram](https://img.shields.io/badge/IG-%40___.v.shnu-red?style=for-the-badge&logo=instagram)](https://www.instagram.com/__.v.shnu/)
