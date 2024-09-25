@@ -1,5 +1,6 @@
 from PIL import Image
 import numpy as np
+
 # Banner for the program
 banner = """
 ██╗███████╗██████╗░  ██████╗░░█████╗░██████╗░
@@ -12,84 +13,65 @@ banner = """
 print(banner)
 print("------------- Image Encryption Tool By Techno-rabit --------------")
 
-def encrypt_image(image_path, key):
-    # Opening the image
-    original_image = Image.open(image_path)
+def encrypt_decrypt_image(image_path, key, mode):
+    # Open the image
+    try:
+        image = Image.open(image_path)
+    except IOError:
+        print("Error: Could not open or find the image.")
+        return
 
-    # Converting the image to a NumPy array
-    image_array = np.array(original_image)
+    # Convert image to numpy array
+    image_array = np.array(image)
 
-    # Applying a more complex mathematical operation to each pixel using the key
-    encrypted_image_array = (image_array * key) // (key + 1)
+    # Convert the key into a byte array (to XOR with image data)
+    key = np.array([ord(char) for char in key], dtype=np.uint8)
 
-    # Creating a new image from the encrypted NumPy array
-    encrypted_image = Image.fromarray(np.uint8(encrypted_image_array))
+    # Resize the key to fit the image size
+    key = np.resize(key, image_array.shape)
 
-    # Saving the encrypted image
-    encrypted_image_path = "encrypted_image.png"
-    encrypted_image.save(encrypted_image_path)
-    print(f"Image encrypted successfully. Encrypted image saved at: {encrypted_image_path}")
-    exit()
+    # Perform XOR encryption/decryption
+    if mode == 'encrypt':
+        encrypted_decrypted_image = np.bitwise_xor(image_array, key)
+    elif mode == 'decrypt':
+        encrypted_decrypted_image = np.bitwise_xor(image_array, key)
 
-def decrypt_image(encrypted_image_path, key):
-    # Opening the encrypted image
-    encrypted_image = Image.open(encrypted_image_path)
+    # Convert back to an image
+    result_image = Image.fromarray(encrypted_decrypted_image)
 
-    # Converting the image to a NumPy array
-    encrypted_image_array = np.array(encrypted_image)
+    return result_image
 
-    # Reversing the more complex encryption using the key
-    decrypted_image_array = (encrypted_image_array * (key + 1)) // key
-
-    # Clipping values to ensure they are in the valid pixel value range
-    decrypted_image_array = np.clip(decrypted_image_array, 0, 255)
-
-    # Creating a new image from the decrypted NumPy array
-    decrypted_image = Image.fromarray(np.uint8(decrypted_image_array))
-
-    # Saving the decrypted image
-    decrypted_image_path = "decrypted_image.png"
-    decrypted_image.save(decrypted_image_path)
-    print(f"Image decrypted successfully. Decrypted image saved at: {decrypted_image_path}")
-    exit()
+def save_image(image, output_path):
+    image.save(output_path)
+    print(f"Image saved to {output_path}")
 
 def main():
     while True:
-        print("Select an option e , d , q :")
-        print("e - Encrypt image")
-        print("d - Decrypt image")
-        print("q - Quit")
-        choice = input("Enter your choice : ")
+        print("\nOptions:")
+        print("1. Encrypt Image")
+        print("2. Decrypt Image")
+        print("3. Quit")
 
-        if choice == 'e':
-            encrypt_choice()
-        elif choice == 'd':
-            decrypt_choice()  
-        elif choice == 'q':
-            print("Exitting the program.")
-            exit()
-        else:
-            print("Invalid choice. Please choose 'e' for encryption, 'd' for decryption, or 'q' to quit.")
+        choice = input("Enter your choice (1/2/3): ")
 
-def encrypt_choice():
-    key = int(input("Enter encryption key: "))
-    image_location = input("Enter the location or URL of the image: ")
+        if choice == '3':
+            print("Exiting the program.")
+            break
+        elif choice not in ['1', '2']:
+            print("Invalid choice. Please choose again.")
+            continue
 
-    try:
-        encrypt_image(image_location, key)
-    except FileNotFoundError:
-        print("Invalid location. Image not found. Please try again.")
-        encrypt_choice()
+        key = input("Enter a key for encryption/decryption: ")
+        image_path = input("Enter the path of the image: ")
 
-def decrypt_choice():
-    key = int(input("Enter decryption key: "))
-    encrypted_image_location = input("Enter the location of the encrypted image: ")
+        if choice == '1':
+            result_image = encrypt_decrypt_image(image_path, key, 'encrypt')
+        elif choice == '2':
+            result_image = encrypt_decrypt_image(image_path, key, 'decrypt')
 
-    try:
-        decrypt_image(encrypted_image_location, key)
-    except FileNotFoundError:
-        print("Invalid location. Encrypted image not found. Please try again.")
-        decrypt_choice()
+        if result_image is not None:
+            output_path = input("Enter the output image path (e.g., output.png): ")
+            save_image(result_image, output_path)
 
 if __name__ == "__main__":
     main()
