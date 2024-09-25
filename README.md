@@ -19,13 +19,12 @@ This Python-based image encryption and decryption tool efficiently handles both 
 - **User-Friendly Interface**: Prompts users for input and provides feedback to ensure a smooth and intuitive experience.
 - **Key Storage**: Saves the encryption key to a file for later use during decryption, enhancing security and usability.
 
-## How It Work
-s
-###1. **Action Selection**: The user is prompted to choose whether to encrypt, decrypt, or quit the program.
-###2. **Image Input**: The user enters the image file path for encryption or decryption.
-###3. **Key Input**: A numerical key is requested from the user, which will be used for the encryption or decryption process.
-###4. **Processing**: The program applies an XOR transformation using the provided key to encrypt or decrypt the image.
-###5. **Output**: The processed image is saved, and feedback is provided to the user regarding the success of the operation.
+## How It Works
+### 1. Action Selection: The user is prompted to choose whether to encrypt, decrypt, or quit the program.
+### 2. Image Input: The user enters the image file path for encryption or decryption.
+### 3. Key Input: A numerical key is requested from the user, which will be used for the encryption or decryption process.
+### 4. Processing: The program applies an XOR transformation using the provided key to encrypt or decrypt the image.
+### 5. Output: The processed image is saved, and feedback is provided to the user regarding the success of the operation.
 
 <p align="center">
 <a href="#"><img title="IED_2" src="IED_2.png"></a>
