@@ -27,6 +27,10 @@ s
 ###4. **Processing**: The program applies an XOR transformation using the provided key to encrypt or decrypt the image.
 ###5. **Output**: The processed image is saved, and feedback is provided to the user regarding the success of the operation.
 
+<p align="center">
+<a href="#"><img title="IED_2" src="IED_2.png"></a>
+</p>
+
 ### Usage
 
 To use the tool, simply run the script, follow the prompts to enter your image path and key, and choose whether to encrypt or decrypt the image.
