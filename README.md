@@ -19,10 +19,18 @@ This Python-based image encryption and decryption tool efficiently handles both 
 ### Usage
 To use the tool, simply run the script, follow the prompts to enter your image path and key, and choose whether to encrypt or decrypt the image.
 
+Ensure you have installed Pillow for image manipulation:
+```bash
+pip install pillow
+```
+Run:
 ```bash
 python image_encryption_tool.py
 ```
+## Contributions
 
----
+If you find this tool useful, consider following [techno-rabit](https://github.com/techno-rabit) on GitHub!
 
-This description now mirrors the structure of the one for **CIPHERX RAB**, but tailored to the image encryption and decryption functionality.
+## Find Me on :
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-VishnuPrasad-blue?style=for-the-badge&logo=LinkedIn)](https://www.linkedin.com/in/technorabit)
+[![Instagram](https://img.shields.io/badge/IG-%40__.v.shnu-red?style=for-the-badge&logo=instagram)](https://www.instagram.com/_.v.shnu)
