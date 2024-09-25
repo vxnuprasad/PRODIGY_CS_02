@@ -12,7 +12,7 @@ banner = """
 ╚═╝╚══════╝╚═════╝░  ╚═╝░░╚═╝╚═╝░░╚═╝╚═════╝░
 """
 print(banner)
-print("------------- Image Encryption Tool By Techno-rabit --------------")
+print("--- Image Encryption Tool By Techno-rabit ---")
 
 def save_key(key):
     """Save the encryption key to a file."""
