@@ -13,7 +13,7 @@ banner = """
 ╚═╝╚══════╝╚═════╝░  ╚═╝░░╚═╝╚═╝░░╚═╝╚═════╝░
 """
 print(banner)
-print("------ Image Encryption Tool By Techno-rabit ------")
+print("------- Image Encryption Tool By Techno-rabit -------")
 
 def encrypt_decrypt_image(image_path, key, mode, original_key_hash=None):
     # Open the image
@@ -83,10 +83,9 @@ def main():
             print("Invalid choice. Please choose again.")
             continue
 
-        key = input("Enter a key for encryption/decryption: ")
-        image_path = input("Enter the path of the image: ")
-
         if choice == '1':
+            key = input("Enter a key for encryption: ")
+            image_path = input("Enter the path of the image: ")
             result_image = encrypt_decrypt_image(image_path, key, 'encrypt')
             if result_image is not None:
                 output_path = input("Enter the output image path (e.g., output.png): ")
@@ -94,6 +93,9 @@ def main():
                 print("Encryption completed successfully.")
                 sys.exit()  # Exit the program after encryption
         elif choice == '2':
+            print("Enter the key given during encryption.")
+            key = input("Enter a key for decryption: ")
+            image_path = input("Enter the path of the encrypted image: ")
             key_hash = load_key_hash(image_path)
             if key_hash:
                 result_image = encrypt_decrypt_image(image_path, key, 'decrypt', original_key_hash=key_hash)
