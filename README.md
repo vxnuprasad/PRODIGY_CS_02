@@ -1,7 +1,4 @@
 # PRODIGY_CS_02
-Here’s the adapted description for the **Image Encryption and Decryption Tool** that matches the format you provided for **CIPHERX RAB**:
-
----
 
 **Image Encryption and Decryption Tool**
 
