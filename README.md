@@ -21,10 +21,14 @@ This Python-based image encryption and decryption tool efficiently handles both 
 To use the tool, simply run the script, follow the prompts to enter your image path and key, and choose whether to encrypt or decrypt the image.
 
 Ensure you have installed Pillow for image manipulation:
-```bash
+```sh
 pip install pillow
 ```
-```bash
+Clone the Github Repositorie
+```sh
+git clone https://github.com/techno-rabit/PRODIGY_CS_02
+```
+```sh
 python iedrab.py
 ```
 ## Contributions
