@@ -14,6 +14,7 @@ banner = """
 print(banner)
 print("------------- Image Encryption Tool By Techno-rabit --------------")
 
+
 def save_key(key):
     with open("encryption_key.txt", "w") as key_file:
         key_file.write(key)
@@ -51,7 +52,7 @@ def decrypt_image(image_path, key):
     image = Image.open(image_path)
     pixel_array = np.array(image)
 
-    # Simple decryption: swap pixel values based on key
+    # Simple decryption: swap pixel values back based on key
     height, width, channels = pixel_array.shape
     for i in range(height):
         for j in range(width):
@@ -66,9 +67,13 @@ def decrypt_image(image_path, key):
 
 def main():
     while True:
-        choice = input("Would you like to (e)ncrypt, (d)ecrypt, or (x) exit? ").lower()
-        
-        if choice == 'x':
+        print("Select an option:")
+        print("e - Encrypt image")
+        print("d - Decrypt image")
+        print("q - Quit")
+        choice = input("Enter your choice: ").lower()
+
+        if choice == 'q':
             print("Exiting the program.")
             break
         
@@ -82,7 +87,7 @@ def main():
             key = input("Enter the decryption key: ")
             decrypt_image(image_path, key)
         else:
-            print("Invalid choice. Please select 'e' for encrypt, 'd' for decrypt, or 'x' to exit.")
+            print("Invalid choice. Please select 'e' to encrypt, 'd' to decrypt, or 'q' to quit.")
 
 if __name__ == "__main__":
     main()
