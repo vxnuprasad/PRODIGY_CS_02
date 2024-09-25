@@ -2,6 +2,18 @@ from PIL import Image
 import numpy as np
 import os
 
+# Banner for the program
+banner = """
+██╗███████╗██████╗░  ██████╗░░█████╗░██████╗░
+██║██╔════╝██╔══██╗  ██╔══██╗██╔══██╗██╔══██╗
+██║█████╗░░██║░░██║  ██████╔╝███████║██████╦╝
+██║██╔══╝░░██║░░██║  ██╔══██╗██╔══██║██╔══██╗
+██║███████╗██████╔╝  ██║░░██║██║░░██║██████╦╝
+╚═╝╚══════╝╚═════╝░  ╚═╝░░╚═╝╚═╝░░╚═╝╚═════╝░
+"""
+print(banner)
+print("------------- Image Encryption Tool By Techno-rabit --------------")
+
 def save_key(key):
     """Save the encryption key to a file."""
     with open("encryption_key.txt", "w") as key_file:
