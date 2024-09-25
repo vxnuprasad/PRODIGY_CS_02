@@ -25,7 +25,7 @@ pip install pillow
 ```
 Run:
 ```bash
-python image_encryption_tool.py
+python iedrab.py
 ```
 ## Contributions
 
