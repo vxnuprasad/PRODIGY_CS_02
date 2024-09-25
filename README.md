@@ -1,7 +1,7 @@
 # PRODIGY_CS_02
 
 <p align="center">
-<a href="#"><img title="Img_1" src="Img_1.png"></a>
+<a href="#"><img title="IED" src="IED.png"></a>
 </p>
 <p align="center">
 <a href="https://github.com/techno-rabit"><img title="Author" src="https://img.shields.io/badge/Author-Vishnu-yellow.svg?style=for-the-badge&logo=github"></a>
