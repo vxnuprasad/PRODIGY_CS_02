@@ -2,19 +2,6 @@ from PIL import Image
 import numpy as np
 import os
 
-# Banner for the program
-banner = """
-██╗███████╗██████╗░  ██████╗░░█████╗░██████╗░
-██║██╔════╝██╔══██╗  ██╔══██╗██╔══██╗██╔══██╗
-██║█████╗░░██║░░██║  ██████╔╝███████║██████╦╝
-██║██╔══╝░░██║░░██║  ██╔══██╗██╔══██║██╔══██╗
-██║███████╗██████╔╝  ██║░░██║██║░░██║██████╦╝
-╚═╝╚══════╝╚═════╝░  ╚═╝░░╚═╝╚═╝░░╚═╝╚═════╝░
-"""
-print(banner)
-print("------------- Image Encryption Tool By Techno-rabit --------------")
-
-
 def save_key(key):
     with open("encryption_key.txt", "w") as key_file:
         key_file.write(key)
@@ -33,11 +20,12 @@ def encrypt_image(image_path, key):
     height, width, channels = pixel_array.shape
     for i in range(height):
         for j in range(width):
-            if (i + j) % len(key) == 0:  # Swap based on the key pattern
-                # Swap with a pixel at a position determined by the key
-                swap_i = (i + int(key) % height) % height
-                swap_j = (j + int(key) % width) % width
-                pixel_array[i, j], pixel_array[swap_i, swap_j] = pixel_array[swap_i, swap_j], pixel_array[i, j]
+            # Define swap positions based on the key
+            swap_i = (i + int(key) % height) % height
+            swap_j = (j + int(key) % width) % width
+            
+            # Swap the pixel values
+            pixel_array[i, j], pixel_array[swap_i, swap_j] = pixel_array[swap_i, swap_j], pixel_array[i, j]
 
     encrypted_image = Image.fromarray(pixel_array)
     encrypted_image.save("encrypted_image.png")
@@ -56,10 +44,12 @@ def decrypt_image(image_path, key):
     height, width, channels = pixel_array.shape
     for i in range(height):
         for j in range(width):
-            if (i + j) % len(key) == 0:  # Swap back based on the key pattern
-                swap_i = (i + int(key) % height) % height
-                swap_j = (j + int(key) % width) % width
-                pixel_array[i, j], pixel_array[swap_i, swap_j] = pixel_array[swap_i, swap_j], pixel_array[i, j]
+            # Define swap positions based on the key
+            swap_i = (i + int(key) % height) % height
+            swap_j = (j + int(key) % width) % width
+            
+            # Swap the pixel values back
+            pixel_array[i, j], pixel_array[swap_i, swap_j] = pixel_array[swap_i, swap_j], pixel_array[i, j]
 
     decrypted_image = Image.fromarray(pixel_array)
     decrypted_image.save("decrypted_image.png")
@@ -85,7 +75,7 @@ def main():
             encrypt_image(image_path, key)
         elif choice == 'd':
             key = input("Enter the decryption key: ")
-            decrypt_image(image_path, key)
+            decrypt_image("encrypted_image.png", key)  # Always use the saved encrypted image
         else:
             print("Invalid choice. Please select 'e' to encrypt, 'd' to decrypt, or 'q' to quit.")
 
