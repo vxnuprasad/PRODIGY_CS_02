@@ -4,7 +4,7 @@
 <a href="#"><img title="IED" src="IED.png"></a>
 </p>
 <p align="center">
-<a href="https://github.com/techno-rabit"><img title="Author" src="https://img.shields.io/badge/Author-Vishnu-yellow.svg?style=for-the-badge&logo=github"></a>
+<a href="https://github.com/vxnuprasad"><img title="Author" src="https://img.shields.io/badge/Author-Vishnu-yellow.svg?style=for-the-badge&logo=github"></a>
 <a href="https://prodigyinfotech.dev/"><img title="Website" src="https://img.shields.io/badge/Website-Prodigy--InfoTech-green.svg?style=for-the-badge&logo=sites"></a>
 </p>
 
@@ -48,8 +48,8 @@ python iedrab.py
 ```
 ## Contributions
 
-If you find this tool useful, consider following [techno-rabit](https://github.com/techno-rabit) on GitHub!
+If you find this tool useful, consider following [vxnuprasad](https://github.com/vxnuprasad) on GitHub!
 
 ## Find Me on :
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-VishnuPrasad-blue?style=for-the-badge&logo=LinkedIn)](https://www.linkedin.com/in/technorabit)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-VishnuPrasad-blue?style=for-the-badge&logo=LinkedIn)](https://www.linkedin.com/in/vxnuprasad)
 [![Instagram](https://img.shields.io/badge/IG-%40__.v.shnu-red?style=for-the-badge&logo=instagram)](https://www.instagram.com/__.v.shnu/)
