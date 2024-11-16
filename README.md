@@ -40,7 +40,7 @@ pip install pillow
 ```
 Clone the Github Repositorie :
 ```sh
-git clone https://github.com/techno-rabit/PRODIGY_CS_02
+git clone https://github.com/vxnuprasad/PRODIGY_CS_02
 ```
 Run :
 ```sh
